@@ -7,6 +7,13 @@
 using namespace std;
 
 // funkcja main
+
+void hello(){
+    cout << "Hej! To podstawy c++. Jeżeli chcesz sobie coś na szybko przypomnieć lub poćwiczyć to zapraszamy! " << endl;
+    cout << "Psst.. Jeżeli znajdziesz jakieś błędy lub coś do poprawy to śmiało nas o tym powiadom ;)" <<endl;
+    cout << "-Koi, Vulturer" <<endl;
+}
+
 int main(){
 
     /* 
@@ -15,6 +22,8 @@ int main(){
     endl - kończy naszą linię
     cout << "Hello World!" << endl;
     */
+
+    hello();
 
     // \n - tworzy nową linijkę w kodzie
     cout << "Welcome \n Koi" << endl;
@@ -396,9 +405,20 @@ int main(){
     void myFunction() {
         // code to be executed
     }
+    Aby funkcja działa musimy napisać funckję poza naszym main, a następnie
+    ją wywołać w naszym main
+    Czyli:
+    void myFunction() {
+        // code to be executed
+    }
+    int main() {
+        myFunction();  // call the function
+        return 0;
+    }
     */
 
-    
+    // ---------------- ZADANIE DOMOWE ---------------
+    // stwórz program, zdefiniuj tablice rejestracyjne marki samochodów (6)
 
     // kończy naszą funkcję
     return 0;
