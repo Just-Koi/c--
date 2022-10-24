@@ -306,8 +306,99 @@ int main(){
 
     for(int jellysToEat = 1; jellysToEat < 101; jellysToEat++){
         cout << jellysToEat << " żelków do zjedzenia nadal mam" <<endl;
+    }; // nie zapominaj o średnikach ;)
+
+    /* 
+    Możemy użyć break'a w pętli for
+    Syntax:
+    for (int i = 0; i < 10; i++) {
+        if (i == 4) {
+            break;
+        }
+    cout << i << "\n";
     }
 
+    Możemy też użyć słowo kluczowe "continue", aby pominąć daną rzecz
+    Syntax:
+    for (int i = 0; i < 10; i++) {
+        if (i == 4) {
+            continue;
+        }
+    cout << i << "\n";
+    }
+    */
+
+    /*
+    Array
+    Array'e są przystosowane do przechowywania kilku wartości w jednej zmiennej
+    */
+
+    string jellys[] = {"Candy", "Haribo"};
+    for (int jelly = 0; jelly < 2; jelly++) {
+        cout << "Żelki firmy " << jellys[jelly] << " są dobre ;-;" <<endl;
+    }
+
+    /*
+    Foreach loop
+    Syntax:
+    for (type variableName : arrayName) {
+        // code block to be executed
+    }
+    */    
+
+    for (string jelly : jellys) {
+        cout << "Żelki firmy " << jelly << " są zarąbiste ;-;" <<endl;
+    }
+
+    /*
+    Aby dostać rozmiar arraya w bajtach możemy użyć operatora sizeof()
+    Aby dostać rozmiar arraya nie w bajtach musimy podzielić sizeof(zmiennej) przez sizeof(typu zmiennej)
+    */
+
+    cout << "Są tylko " << sizeof(jellys) / sizeof(string) << " dobre firmy z dobrymi żelkami" <<endl;
+
+    /*
+    Struktury, czyli obiekty
+    syntax:
+    struct {               // Structure declaration
+        int myNum;         // Member (int variable)
+        string myString;   // Member (string variable)
+    }myStructure;          // Structure variable
+    */
+
+    struct 
+    {
+        string jellysCorp;
+        string tasteOfJellys;
+        int numberOfJellysInPackage;
+        double priceOfJellys;
+    }jellyIsGood;
+
+    jellyIsGood.jellysCorp = "Candy";
+    jellyIsGood.tasteOfJellys = "Yummy";
+    jellyIsGood.numberOfJellysInPackage = 200/2.5;
+    jellyIsGood.priceOfJellys = 2.99;
+
+    cout << "Good jellys are from " << jellyIsGood.jellysCorp << " and their taste must be " << jellyIsGood.tasteOfJellys << ". Their cost is only " << jellyIsGood.priceOfJellys << " and there are " << jellyIsGood.numberOfJellysInPackage << " jellys in one package." <<endl;
+
+    /*
+    Za pomocą znaku "&" referujemy zmienną do istniejącej zmiennej
+    Syntax:
+    string str = "My string";
+    string &myString = string;
+
+    Pointer to zmienna, która przechowuje pamięć adresu, jako swoją wartość
+    Operator pointer'a to "*"
+
+    Tworzenie funckji w c++
+    Funkcja to blok kodu, który działa tylko wtedy, kiedy zostaje wywołany
+    Syntax:
+    void myFunction() {
+        // code to be executed
+    }
+    */
+
+    
 
     // kończy naszą funkcję
     return 0;
