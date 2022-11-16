@@ -8,6 +8,14 @@ using namespace std;
 
 // funkcja main
 
+void aboutYou(string yourName, int yourAge){
+    cout << "twoje imię to " << yourName << " i masz " << yourAge << endl;
+}
+
+void itsMe(string name, int age){
+    cout << "Mam na imię " << name << " i mam " << age << " lat." <<endl;
+}
+
 void hello(){
     cout << "Hej! To podstawy c++. Jeżeli chcesz sobie coś na szybko przypomnieć lub poćwiczyć to zapraszamy! " << endl;
     cout << "Psst.. Jeżeli znajdziesz jakieś błędy lub coś do poprawy to śmiało nas o tym powiadom ;)" <<endl;
@@ -415,10 +423,58 @@ int main(){
         myFunction();  // call the function
         return 0;
     }
+
+    w funckcjach z parametrem określamy typ naszego parametru 
+    void myFunction(string firstName, string secondName) {
+        cout << firstName << " " << secondName << endl;
+    }
+
+    int main() {
+        myFunction("Kacper", "Marciniak");
+        return 0;
+    }
+
+    możemy przypisać wartość naszemu parametrowi i następnie przy wywołaniu
+    funkcji zmienić tą wartość lub  nie zmieniać jej i ją wywołać
+
+    void myFunction(string country = "Poland"){
+        cout << country << endl;
+    }
+
+    int main(){
+        myFunction("Germany");
+        myFunction();
+
+        return 0;
+    }
+
+    możemy też zwrócić wartość w funckji aby zaktualizować wartość wyniku
+    void myFunction(int x){
+        return x + 5;
+    }
+    int main(){
+        cout << myFunction(10) << endl;
+        return 0;
+    }
+
     */
 
-    // ---------------- ZADANIE DOMOWE ---------------
-    // stwórz program, zdefiniuj tablice rejestracyjne marki samochodów (6)
+    itsMe("Kacper", 16);
+
+    string yourName2;
+    int yourAge2;
+    
+    cout << "Wprowadź swoje imię: "<< endl;
+    cin >> yourName2;
+    cout << "Your age: "<< endl;
+    cin >> yourAge2;
+
+    aboutYou(yourName2, yourAge2);
+
+    /*
+    
+    */
+    
 
     // kończy naszą funkcję
     return 0;
