@@ -2,14 +2,32 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <stdio.h>
+#include <string.h>
 
 // sprawia, że możemy używać nazw dla obiektów i zmiennych z biblioteki bez konieczności pisania "std" za każdym razem
 using namespace std;
 
-// Funkcje - Narazie je pomij, w późniejszym etapie kodu do nich dojdziesz
+// Klasy - Narazie pomij, w późniejszym etapie kodu do nich dojdziesz
+
+class Jellys {
+    public:
+        string nazwa_firmy;
+        string smak;
+        int ilosc_gram;
+};
+
+class functionClass {
+    public:
+        void myFunctionClass() {
+            cout << "Jak tam ci leci nauka ?";
+        }
+};
+
+// Funkcje - Narazie pomij, w późniejszym etapie kodu do nich dojdziesz
 
 void aboutYou(string yourName, int yourAge){
-    cout << "twoje imię to " << yourName << " i masz " << yourAge << endl;
+    cout << "twoje imię to " << yourName << " i masz " << yourAge << " lat." << endl;
 }
 
 void itsMe(string name, int age){
@@ -45,7 +63,7 @@ int main(){
     cout << "Mam 5 \\ 2 lat" << endl;
 
     // \" - dodaje ci podwójnego quota ""
-    cout << "\"Witam\"" << endl;
+    cout << "\'Witam\'" << endl;
 
     // \" - dodaje ci pojedynczego quota ""
     cout << "\'Witam\'" << endl;
@@ -588,7 +606,112 @@ int main(){
         return 0;
     }
 
-    Możesz tworzyć 
+    Możesz tworzyć kilka obiektów jednej klasy
+
+    class Jellys{
+        public:
+            string nazwa_firmy;
+            string smak;
+            int ilosc_gram;
+    }
+
+    */
+
+   Jellys jelly1;
+   jelly1.nazwa_firmy = "Haribo";
+   jelly1.smak = "drogi";
+   jelly1.ilosc_gram = 100;
+
+   Jellys jelly2;
+   jelly2.nazwa_firmy = "Candy";
+   jelly2.smak = "tani";
+   jelly2.ilosc_gram = 200;
+
+   Jellys jelly3;
+   jelly3.nazwa_firmy = "Kino";
+   jelly3.smak = "mega tani";
+   jelly3.ilosc_gram = 200;
+
+
+   cout << "Żelki nr.1 to żelki firmy " << jelly1.nazwa_firmy << ", a ich smak jest " << jelly1.smak << ". Paczka zawiera " << jelly1.ilosc_gram << " gram żelków." <<endl;
+   cout << "Żelki nr.2 to żelki firmy " << jelly2.nazwa_firmy << ", a ich smak jest " << jelly2.smak << ". Paczka zawiera " << jelly2.ilosc_gram << " gram żelków." <<endl;
+   cout << "Żelki nr.3 to żelki firmy " << jelly3.nazwa_firmy << ", a ich smak jest " << jelly3.smak << ". Paczka zawiera " << jelly3.ilosc_gram << " gram żelków." <<endl;
+
+   /*
+   Możemy tworzyć funkcję w klasach:
+
+    class functionClass {
+    public:
+        void myFunctionClass() {
+            cout << "Jak tam ci leci nauka ?";
+        }
+    };
+
+   */
+
+    functionClass myObjectOfFunCls;
+    myObjectOfFunCls.myFunctionClass();
+
+    /*
+    To był przykład użycia funkcji działającej w klasie, natomiast możemy też 
+    użyć funkcji zewnętrznie.
+
+        class functionClass {
+        public:
+            void myFunctionClass();
+        };
+
+        void functionClass::myFunctionClass(){
+            cout << "Napiłbym się kawy :/ A ty ?";
+            cin >>;
+        }
+
+    Wywołamy tą funkcję w ten sam sposób co funkcję wewnątrz klasy
+
+    Można także tworzyć klasy z parametrami, bez konieczności używania funckji.
+
+    class Car {
+        public:
+            int speed(int maxSpeed);
+    };
+
+    int Car::speed(int maxSpeed) {
+        return maxSpeed;
+    }
+
+    int main() {
+        Car myCar; 
+        cout << myCar.speed(418); // Jedna z moich ulubionych liczb, możesz sprawdzić dlaczego ;)
+        return 0;
+    }
+
+*/
+
+    // Donut na motywację ;) - https://github.com/adhikary97/Donut
+    /*
+    
+                                                                                       
+                   @@@@@@@                                 
+             $$$$######$$$$$$$$$                           
+           ###***!******#####$$$$$$                        
+         ****!!!=!!=!!!!!!!***###$$$#                      
+       *!!!!!==;;;;;;;===!!!****######*                    
+      !!!!=;;::~~---~~:::;==!!!****####*                   
+     !!!=;;:~--,.....,,-~::;==!!*********                  
+    ====;;:~-,..........,-~~;;==!!*******=                 
+    ====;:~~,,...... .....-~::;==!!*!****!                 
+    ====;;:~-,...       ..,-~:;;=!!!!!!!!!                 
+    ;====;;:~-,.         ..-~:;;==!!!!!!!=                 
+    ;==!!====!==-        ,,-~:;;===!!!!!==                 
+    :==!!**#####*=      ~::;;;;==========;                 
+     ;=!**###$$$$$$#*!!==;;;=;==========;:                 
+     ~;=!**#$$$@@@$$##**!!!===========;;:                  
+      -;=!!*##$$$$$$##***!!!=======;;;:~                   
+       ,:=!*!**#####****!!!=====;;;;::~                    
+         -:;=!=!!!!!!!!!!!====;;;::~~,                     
+           ,~:;===!!!!=====;;:::~~-,                       
+              ,-~::;;;::::~:~~-,.                          
+                  ...,,,.....                              
 
     */
 
