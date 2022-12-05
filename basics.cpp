@@ -1,12 +1,12 @@
-// #include <iostream> to plik "header libary". Odpowiada za przypominanie komplikomatorowi o rzeczach potrzebnych do zbudowaia pliku
+// #include <iostream> to plik "header libary". Odpowiada za przypominanie komplikatorowi o rzeczach potrzebnych do zbudowaia pliku
 #include <iostream>
 #include <string>
 #include <cmath>
 
-// sprawia, że możemy używać nazw dla obiektów i zmiennych z biblioteki bez konieczności pisania "std"
+// sprawia, że możemy używać nazw dla obiektów i zmiennych z biblioteki bez konieczności pisania "std" za każdym razem
 using namespace std;
 
-// funkcja main
+// Funkcje - Narazie je pomij, w późniejszym etapie kodu do nich dojdziesz
 
 void aboutYou(string yourName, int yourAge){
     cout << "twoje imię to " << yourName << " i masz " << yourAge << endl;
@@ -21,6 +21,8 @@ void hello(){
     cout << "Psst.. Jeżeli znajdziesz jakieś błędy lub coś do poprawy to śmiało nas o tym powiadom ;)" <<endl;
     cout << "-Koi, Vulturer" <<endl;
 }
+
+// funkcja main
 
 int main(){
 
@@ -517,10 +519,79 @@ int main(){
         return 0;
     }
 
+    ============================================================
+    ===================== Rekursja Funckji =====================
+    ============================================================
+
+    Rekursja funkcji to technika tworzenia funckji, która wywołuje się sama.
+    Za pomocą tej metody jesteśmy w stanie poradzić sobie z skomplikowanymi 
+    problemami.
+
+    int sum(int x) {
+        if(x > 0) {
+            return x + sum(x - 1);
+        } else{
+            return 0;
+        }
+    }
+
+    int main(){
+        int result = sum(10);
+        cout << result;
+        return 0;
+    }
+
+    ===================================================
+    ===================== OOP C++ =====================
+    ===================================================
+
+    OOP jest skótem od ,,Object-Oriented Programming", czyli programowanie skupiona
+    na obiektach. Proceduralne programowanie opiera się na pisaniu procedur lub 
+    funkcji, opierających się na danych, podczas gdy programowanie obiektowe (skupione 
+    na programowaniu) opierane jest na tworzeniu obiektów, które przechowują dane i 
+    funckje.
+
+    Programowanie skupione na obiektach jest lepsze od proceduralnego ze względu na:
+    - OOP jest szyszbe i łatwiejsze do urochomienia
+    - OOP posiada czystą strukturę dla programów
+    - OOP pomaga zachować kod C++ SUCHYM z angielskiego "DRY code", co oznacza "Don't repeat yourself code". 
+    - OOP pozwala na tworzenie pełnych używalnych aplkacji, w krótszym czasie, bez potrzeby pisania więcej kodu 
+
+    Co to są obiekty i klasy ?
+
+    Klasą może być owoc, natomiast obiektem mógłboby być jabłko, autem
+    mogłoby być Volvo, a Słodycze, żelkami.
+
+    Wszystko w C++ ma związek z klasami, atrybutami, obiektami i metodami. Dla przykładu obiektem jest auto,
+    auto posiada atrybut taki, jak waga lub kolor oraz metoday, takie jak jedź i przerwa. Atrybuty i metoda to 
+    z zasady zazwyczaj zmienna i funkcje, które należą do klas. 
+
+    ~ Klasa wygląda w ten sposób:
+
+    class MyClass {       // określenie funkcji
+        public:           // określacz dostępu
+        int myNum;        // Atrybut (int variable)
+        string myString;  // Atrybut (string variable)
+    };
+
+    int main() {
+        MyClass myObject;  // Obiekt klasy "MyClass"
+
+        // Określanie wartości dla atrybutów
+        myObj.myNum = 15; 
+        myObj.myString = "Some text";
+
+        // Pokaż wartości atrbutów
+        cout << myObj.myNum << "\n";
+        cout << myObj.myString;
+        
+        return 0;
+    }
+
+    Możesz tworzyć 
+
     */
 
-
-    
 
     // kończy naszą funkcję
     return 0;
