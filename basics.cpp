@@ -472,8 +472,54 @@ int main(){
     aboutYou(yourName2, yourAge2);
 
     /*
-    
+    Jeżeli chcemy przypisać Array do funckji, wtedy nasza 
+    funkcja oraz int main() będą wyglądały w ten sposób:
+
+    void myNumberFunction(int myNumbers[5]){
+        for (int i = 0; i < 5; i++){
+            cout << myNumbers[i] <<endl;
+        }
+    }
+
+    int main(){
+        int myNumbers[5] = {10, 20, 30, 40, 50};
+        myNumberFunction(myNumbers);
+
+        return 0;
+    }
+
+    ===========================================================
+    ===================== Nadmiar Funckji =====================
+    ===========================================================
+
+    Podczas nadmiaru funkcji, kilka funckji może mieć tą samą 
+    nazwę z innymi parametrami
+
+    - int myFuntion(int x)
+    - float myFunction(float x)
+    - double myFunction(double x, double y)
+
+    int plusFunctionInteger(int x, int y){
+        return x + y;
+    }
+
+    double plusFunctionDouble(double x, double y){
+        return x + y;
+    }
+
+    int main(){
+        int myNum1 = plusFunctionInteger(10, 5);
+        double myNum2 = plusFunctionDouble(3.2, 2.21);
+
+        cout << "Integer: " << myNum1 <<endl;
+        cout << "Double: " << myNum2 <<endl;
+
+        return 0;
+    }
+
     */
+
+
     
 
     // kończy naszą funkcję

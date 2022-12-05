@@ -1,2 +1,5 @@
 # c--
-C++ Basics in your mouth
+Podstawy C++
+- Wprowadzenie C++
+- Funckje C++
+- Klasy C++
