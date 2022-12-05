@@ -615,6 +615,13 @@ int main(){
             int ilosc_gram;
     }
 
+    Po co dodajemy "public" ?
+    ~ public to słowo kluczowe, które służy jako Specyfikator dostępu, natomiast owy specyfikator określa 
+    jak członkowie, czyli atrybuty i metody klas mogą dostać dostęp. Członkowie są słowem kluczowym public,
+    co znaczy, że można się do nich dostać i je zmodyfikować z zewnątrz. 
+    ~ zamiast public, możemy też użyć słowa kluczowe "private" (członkowie nie mogą zostać wyświetleni z zewnątrz) lub "protected" 
+    (członkowie nie mogą zostać wyświetleni z zewnątrz, natomiast mogą być wyświetlone w klasach dziedziczonych).
+
     */
 
    Jellys jelly1;
