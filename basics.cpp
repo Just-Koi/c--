@@ -1,5 +1,21 @@
 // #include <iostream> to plik "header libary". Odpowiada za przypominanie komplikatorowi o rzeczach potrzebnych do zbudowaia pliku
 #include <iostream>
+#include <fstream>
+/*
+
+    ===============================
+    ==== Praca z plikami w C++ ====
+    ===============================
+
+    Biblioteka fstream pozwala nam na pracę z plikami w c++. 
+    Zawiera ona standard <iostream> i <fstream>.
+    Są trzy klasy wkluczone w bibliotekę fstream, które są 
+    używane w celu nadpisywania i czytania plików.
+    Biblioteka fstream:
+        - ofstream: nadpisuje pliki,
+        - ifstream: czyta pliki,
+
+*/
 #include <string>
 #include <cmath>
 #include <stdio.h>
@@ -622,6 +638,61 @@ int main(){
     ~ zamiast public, możemy też użyć słowa kluczowe "private" (członkowie nie mogą zostać wyświetleni z zewnątrz) lub "protected" 
     (członkowie nie mogą zostać wyświetleni z zewnątrz, natomiast mogą być wyświetlone w klasach dziedziczonych).
 
+    Przykłady użyć innych słów kluczowych:
+
+    ~ Przykład z użyciem słowa kluczowego
+
+    class MyClass{
+        public:
+            int x;
+        private:
+            int y;
+    }
+
+    int main(){
+        MyClass myObject; 
+        myObject.x = 15; // Posiada zezwolenie (publiczny)
+        myObject.y = 25; // Nie posiada zezwolenia (prywatny)
+    }
+
+    Jako wynik debugowania kodu, wyjdzie ci error, ponieważ zmienna y jest prywatna, tak samo w 
+    przypadku słowa kluczowego "protected"
+
+    ===================================================
+    ========= Encapsulation ("Hemertyzacja") ==========
+    ===================================================
+
+    Encapsulation (na polski, Hemertyzacja) jest po to by się upewnić, że nasze "wrażliwe"
+    dane są ukryte przed użytkownikiem. Żeby to osiągnąć używamy wcześniej omówionego słowa
+    kluczowego "private". Jeżeli chcesz zmienić lub odczytać chronione wartości możesz użyć 
+    metody get lub set.
+    Przykład poniżej ogranicza dostęp atrybutowi salary, metoda set pod słowem kluczowym 
+    "public" ustawia wartość salary, a następnie metoda get pobiera jego wartość.
+
+    class Employee {
+        private:
+            int salary;
+
+        public: 
+            // "setter" - metoda set
+            void setSalary(int s) {
+                salary = s;
+            }
+            // "getter" - metoda get
+            int getSalary() {
+                return salary;
+            }
+    }
+
+    int main() {
+        Employee emp;
+        emp.setSalary(100000);
+
+        cout << emp.getSalary() << endl;
+
+        return 0;
+    }
+
     */
 
    Jellys jelly1;
@@ -691,6 +762,227 @@ int main(){
         cout << myCar.speed(418); // Jedna z moich ulubionych liczb, możesz sprawdzić dlaczego ;)
         return 0;
     }
+
+    ===================================================
+    ============== Parametry konstrukcji ==============
+    ===================================================
+
+    Konstrukcję mogą przyjmować parametry, tak jak funkcje.
+
+    class Dominik {
+        public:
+            int years;
+            string lastName;
+            string laptop;
+            Dominik(string lname, string lp, int old) {
+                lastName = lname;
+                laptop = lp;
+                years = old;
+            }
+    }
+
+    int main() {
+
+        // tworzy obiekt o nazwie "Dominik" i ją wywołuje z innymi parametrami
+        Dominik dominik("Juchimiuk", "Dell", 16);
+
+        // wyświetl wartości
+        cout << dominik.laptop << " " << dominik.lastName << " " << dominik.years << endl;
+
+        return 0;
+    }   
+
+    ====================================================================
+    =================== Inheritance (dziedziczenie) ====================
+    ====================================================================
+
+    W c++ jest możliwe dziedziczenie atrybutów i metod od jednej klasy 
+    do kolejnej. Kocepcje dziedziczenia w c++ dzielimy na dwie katergorie:
+        - derived class, child (dziecko) - klasa, która dziedziczy atrbuty
+          od innej klasy
+        - base class, parent (rodzic) - klasa, od której atrybuty są 
+        dziedziczone
+
+    // "Base class"
+    class BaseClass {
+        public:
+            string brand = "Ferrari";
+            void honk(){
+                cout << "Tu tuu tuuuu" <<endl;
+            }
+    };
+    // "Derived class"
+    class derivedClass : public BaseClass{
+        public:
+            string model = " 288 GTO";
+    } ;
+
+    int main(){
+
+        derivedClass derived;
+        derived.honk();
+
+        cout << derived.brand << " " << derived.model <<endl;
+
+        return 0;
+    }
+
+    Również jest możliwe dziedzczenie jednej z klasy z innej 
+    dziedziczonej klasy
+
+    // "Base class"
+    class BaseClass {
+        public:
+            void myFunction() {
+                cout << "Napiłbym się kawy :/ A ty" <<endl;
+            }
+    };
+
+    // "Derived class"
+    class derivedClass : public BaseClass{};
+
+    // "Derived class 2"
+    class derivedClassSecond : public derivedClass{};
+
+    int main(){
+        derivedClassSecond derived;
+        derived.myFunction();
+        return 0;
+    }
+
+    Klasa może być dziedziczona więcej niż z tylko jednej klasy pełniącej 
+    rolę rodzica - base class.
+
+    // "Base class"
+    class BaseClass {
+        public:
+            void myFunction() {
+                cout << "Napiłbym się kawy :/ A ty" <<endl;
+            }
+    };
+
+    // Kolejny: "Base Class"
+    class otherBaseClass{
+        void myOtherFunction() {
+            cout << "Chociaż, może jednak wolałbym żelki" <<endl;
+        }
+    };
+
+    // "Derived class"
+    class derivedClass : public BaseClass, otherBaseClass{};
+
+    int main(){
+        derivedClass derived;
+        derived.myFunction();
+        derived.myOtherFunction();
+        return 0;
+    }
+
+    Co najważniejsze, możemy dziedzić atrybuty chronione.
+
+    // "Base class"
+    class Employee {
+        protected:
+            int salary;
+    };
+
+    // Kolejny: "Base class"
+    class Person {
+        public: 
+            string fName;
+            string lName;
+    };
+
+    // "Derived class"
+    class emp : public Employee, public Person {
+        void setSalary(int s) {
+            salary = s;
+        }
+        int getSalary() {
+            return salary;
+        }
+    };
+
+    int main(){
+        emp Dominik;
+        Dominik.fName = "Dominik";
+        Dominik.lName = "Juch";
+        Domonik.setSalary(20000);
+        Dominik.getSalary();
+
+        cout << Dominik.fName << " " << Dominik.lName << " " << Dominik.salary <<endl;
+        
+        return 0;
+    }
+
+    =====================================================================
+    ==== Polymorphism - ,,Many forms" (Polimorfizm - ,,Wiele form") =====
+    =====================================================================
+
+    Polimorfizm, tzw. Wiele form zdarza się, kiedy mamy wiele klas, które są ze sobą 
+    powiązane poprzez dziedziczenie.
+
+    // "Base class"
+    class BaseClass {
+        public:
+            void myFunction() {
+                cout << "Zawodowcy lubią się bawić w Lego Technic" <<endl;
+            }
+    };
+
+    // "Derived class"
+    class derivedClass : public BaseClass{
+        public:
+            void myFunction() {
+                cout << "Technicy lubią się bawić w Arduino" <<endl;
+            }
+    }; 
+
+    // "Derived class 2"
+    class derivedClassSecond : public BaseClass{
+        public:
+            void myFunction() {
+                cout << "Studenci lubią się bawić w inżynerie komputerową" <<endl;
+            }
+    };
+
+    int main(){
+        BaseClass base;
+        derivedClass derived;
+        derivedClassSecond derivedSecond;
+
+        base.myFunction();
+        derived.myFunction();
+        derivedSecond.myFunction();
+
+        return 0;
+    }
+
+    =============================================
+    ==== Praca z plikami w C++ - kontyunacja ====
+    =============================================
+
+    - Pracę z plikami w c++ zaczynamy od importowania biblioteki 
+    <fsream>, więcej o tym znajdziesz na samej górze pliku, linijka
+    czwarta.
+
+*/
+
+    // tworzy i otwiera plik
+    ofstream MyFile("kocham_zelki.txt");
+
+    // pisze do pliku
+    MyFile << "My kochamy żelki, Jeśli je zjesz będziesz wielki! Zjedz a poczujesz ulgę w gębie x2 Oooł  jeeee... - https://jaramy-si.blogspot.com/2012/04/oto-piosenka-o-zelkach.html" <<endl;
+
+    // przeczytaj plik
+    ifstream MyFile("kocham_zelki.txt");
+
+    // zamyka plik
+    MyFile.close();
+    
+/*
+
+    C++ Exceptions
 
 */
 
