@@ -7,9 +7,9 @@
     ==== Praca z plikami w C++ ====
     ===============================
 
-    Biblioteka fstream pozwala nam na pracę z plikami w c++. 
+    Biblioteka fstream pozwala nam na pracę z plikami w c++.
     Zawiera ona standard <iostream> i <fstream>.
-    Są trzy klasy wkluczone w bibliotekę fstream, które są 
+    Są trzy klasy wkluczone w bibliotekę fstream, które są
     używane w celu nadpisywania i czytania plików.
     Biblioteka fstream:
         - ofstream: nadpisuje pliki,
@@ -26,41 +26,48 @@ using namespace std;
 
 // Klasy - Narazie pomij, w późniejszym etapie kodu do nich dojdziesz
 
-class Jellys {
-    public:
-        string nazwa_firmy;
-        string smak;
-        int ilosc_gram;
+class Jellys
+{
+public:
+    string nazwa_firmy;
+    string smak;
+    int ilosc_gram;
 };
 
-class functionClass {
-    public:
-        void myFunctionClass() {
-            cout << "Jak tam ci leci nauka ?";
-        }
+class functionClass
+{
+public:
+    void myFunctionClass()
+    {
+        cout << "Jak tam ci leci nauka ?";
+    }
 };
 
 // Funkcje - Narazie pomij, w późniejszym etapie kodu do nich dojdziesz
 
-void aboutYou(string yourName, int yourAge){
+void aboutYou(string yourName, int yourAge)
+{
     cout << "twoje imię to " << yourName << " i masz " << yourAge << " lat." << endl;
 }
 
-void itsMe(string name, int age){
-    cout << "Mam na imię " << name << " i mam " << age << " lat." <<endl;
+void itsMe(string name, int age)
+{
+    cout << "Mam na imię " << name << " i mam " << age << " lat." << endl;
 }
 
-void hello(){
+void hello()
+{
     cout << "Hej! To podstawy c++. Jeżeli chcesz sobie coś na szybko przypomnieć lub poćwiczyć to zapraszamy! " << endl;
-    cout << "Psst.. Jeżeli znajdziesz jakieś błędy lub coś do poprawy to śmiało nas o tym powiadom ;)" <<endl;
-    cout << "-Koi, Vulturer" <<endl;
+    cout << "Psst.. Jeżeli znajdziesz jakieś błędy lub coś do poprawy to śmiało nas o tym powiadom ;)" << endl;
+    cout << "-Koi, Vulturer" << endl;
 }
 
 // funkcja main
 
-int main(){
+int main()
+{
 
-    /* 
+    /*
     cout - wymawiamy, jako "see out". Jak sama nazwa na to wskazuje, sprawia, że możemy zobaczyć jego wynik
     << - sprawiam, że widać wartość wyjściową
     endl - kończy naszą linię
@@ -73,7 +80,7 @@ int main(){
     cout << "Welcome \n Koi" << endl;
 
     // \t - dodaje taba
-    cout << "Welcome \t To Hell.." <<endl;
+    cout << "Welcome \t To Hell.." << endl;
 
     // \\ - dodaje ci slasza "\"
     cout << "Mam 5 \\ 2 lat" << endl;
@@ -94,7 +101,7 @@ int main(){
 
     int myYears = 16;
     string myYearsString = "Mam ";
-    string myYearStringEnd =  " lat";
+    string myYearStringEnd = " lat";
 
     cout << myYearsString << myYears << myYearStringEnd << endl;
 
@@ -175,18 +182,18 @@ int main(){
     string myLastName = "Marciniak";
 
     string fullName = myName.append(myLastName);
-    cout << fullName <<endl;
+    cout << fullName << endl;
 
     cout << "Liczba znaków w fullName: " << fullName.length() << endl;
 
-    /* 
+    /*
     Możemy używać właściwości array'ów by wyznaczyć dany symbol w wartości
     Oczywiście należy pamiętać o tym, że liczymy od 0, nie od 1
     */
 
-    cout << fullName[15] <<endl;
+    cout << fullName[15] << endl;
 
-    /* 
+    /*
     Warto pamiętać o funckji "getline()", która bierze nam wartość z naszej deklaracji i wyświetla jej wartość, którą potrzebujemy
     getline ({deklaracja}, {zmienna});
     getline (cin, fullName);
@@ -203,7 +210,7 @@ int main(){
 
     */
 
-    /* 
+    /*
     Matematycza funkcja "max" pozwala nam na wyświetlenie największej wartości
     cout << max(5, 10);
     wynik to "10"
@@ -217,18 +224,18 @@ int main(){
     cout << "Największa wartość spośród zmiennych jest równa: " << max(o, p) << endl;
 
     /*
-    Użycie headera <cmath> pozwoli nam na używanie takich funckcji matematycznych, jak: 
+    Użycie headera <cmath> pozwoli nam na używanie takich funckcji matematycznych, jak:
     - sqrt ( równania kwadratowe )
     - round ( zaokrągla liczbę )
     - log ( naturalny logarytm )
     - reszta funckji matematycznych tutaj: https://www.w3schools.com/cpp/cpp_math.asp
     */
 
-    cout << "Równanie kwadratowe z 81: " << sqrt(81) <<endl;
-    cout << "Przybliżenie wartości 2.45: " << round(2.45) <<endl;
-    cout << "Logarytm naturalny z liczby 10: " << log(10) <<endl;
+    cout << "Równanie kwadratowe z 81: " << sqrt(81) << endl;
+    cout << "Przybliżenie wartości 2.45: " << round(2.45) << endl;
+    cout << "Logarytm naturalny z liczby 10: " << log(10) << endl;
 
-    /* 
+    /*
     Co ciekawe to jednak Boolean nie posiada tylko dwóch wartości "" w pewnym sensie ""
     Chodzi o to, że oprócz wartości true lub false, składa też wartości on lub off albo yes lub no
     Czyli posiada dwie wartości ( 0 lub 1 ), aczkolwiek posiada też 6 ""przypadków wartości"" - nie wiem, jak to inaczej nazwać
@@ -258,22 +265,29 @@ int main(){
     */
 
     int time = 18;
-    if (time > 19){
-        cout << "Dobry wieczór " <<endl;
-    } else if (time > 21){
-        cout << "Dobranoc" <<endl;
-    } else if (time < 9 && time > 2){
-        cout << "Dobry" <<endl;
-    } else {
-        cout << "Dzień dobry" <<endl;
+    if (time > 19)
+    {
+        cout << "Dobry wieczór " << endl;
+    }
+    else if (time > 21)
+    {
+        cout << "Dobranoc" << endl;
+    }
+    else if (time < 9 && time > 2)
+    {
+        cout << "Dobry" << endl;
+    }
+    else
+    {
+        cout << "Dzień dobry" << endl;
     }
 
-    /* 
-    Warto pamiętać o syntaxie, a co za tym idzie, skróconej wersji kondycji 
+    /*
+    Warto pamiętać o syntaxie, a co za tym idzie, skróconej wersji kondycji
     zmienna = (kondycja) ? jeżeliTak : jeżeliNie;
     */
 
-    (myYears >= 16) ? cout << "Mam ponad 16 lat, więc jedno piwo mi nie zaszkodzi" <<endl : cout << "Za niedługo będę miał 16 lat, napewno!" <<endl;
+    (myYears >= 16) ? cout << "Mam ponad 16 lat, więc jedno piwo mi nie zaszkodzi" << endl : cout << "Za niedługo będę miał 16 lat, napewno!" << endl;
 
     /*
     Używamy kondycje switch aby zaznaczyć jeden z wielu bloków kodu do odpalenia
@@ -295,18 +309,18 @@ int main(){
     jeżeli się zgadza to wywoła to dany kod bloku
     słowa kluczowe break oraz default są opcjonalne
     */
-    
+
     int haveJellys = 0;
     switch (haveJellys)
     {
     case 0:
-        cout << "Kupcie mi żelki ;-;" <<endl;
+        cout << "Kupcie mi żelki ;-;" << endl;
         break;
     case 1:
-        cout << "Mam żelki B-)" <<endl;
+        cout << "Mam żelki B-)" << endl;
         break;
     default:
-        cout << "Mam ochotę na żelki ;-;" <<endl;
+        cout << "Mam ochotę na żelki ;-;" << endl;
     }
 
     /*
@@ -326,7 +340,7 @@ int main(){
     int loop = 1;
     while (loop < 101)
     {
-        cout << loop << " żelków do zjedzenia zostało" <<endl;
+        cout << loop << " żelków do zjedzenia zostało" << endl;
         loop++;
     }
 
@@ -339,13 +353,13 @@ int main(){
     }
     while (condition);
     */
-    
+
     int loop2 = 1;
-    do{
-        cout << loop2 << " żelków do zjedzenia poszło" <<endl;
+    do
+    {
+        cout << loop2 << " żelków do zjedzenia poszło" << endl;
         loop2++;
-    }
-    while (loop2 < 101);
+    } while (loop2 < 101);
 
     /*
     For loop
@@ -357,11 +371,12 @@ int main(){
     }
     */
 
-    for(int jellysToEat = 1; jellysToEat < 101; jellysToEat++){
-        cout << jellysToEat << " żelków do zjedzenia nadal mam" <<endl;
+    for (int jellysToEat = 1; jellysToEat < 101; jellysToEat++)
+    {
+        cout << jellysToEat << " żelków do zjedzenia nadal mam" << endl;
     }; // nie zapominaj o średnikach ;)
 
-    /* 
+    /*
     Możemy użyć break'a w pętli for
     Syntax:
     for (int i = 0; i < 10; i++) {
@@ -387,8 +402,9 @@ int main(){
     */
 
     string jellys[] = {"Candy", "Haribo"};
-    for (int jelly = 0; jelly < 2; jelly++) {
-        cout << "Żelki firmy " << jellys[jelly] << " są dobre ;-;" <<endl;
+    for (int jelly = 0; jelly < 2; jelly++)
+    {
+        cout << "Żelki firmy " << jellys[jelly] << " są dobre ;-;" << endl;
     }
 
     /*
@@ -397,10 +413,11 @@ int main(){
     for (type variableName : arrayName) {
         // code block to be executed
     }
-    */    
+    */
 
-    for (string jelly : jellys) {
-        cout << "Żelki firmy " << jelly << " są zarąbiste ;-;" <<endl;
+    for (string jelly : jellys)
+    {
+        cout << "Żelki firmy " << jelly << " są zarąbiste ;-;" << endl;
     }
 
     /*
@@ -408,7 +425,7 @@ int main(){
     Aby dostać rozmiar arraya nie w bajtach musimy podzielić sizeof(zmiennej) przez sizeof(typu zmiennej)
     */
 
-    cout << "Są tylko " << sizeof(jellys) / sizeof(string) << " dobre firmy z dobrymi żelkami" <<endl;
+    cout << "Są tylko " << sizeof(jellys) / sizeof(string) << " dobre firmy z dobrymi żelkami" << endl;
 
     /*
     Struktury, czyli obiekty
@@ -419,20 +436,20 @@ int main(){
     }myStructure;          // Structure variable
     */
 
-    struct 
+    struct
     {
         string jellysCorp;
         string tasteOfJellys;
         int numberOfJellysInPackage;
         double priceOfJellys;
-    }jellyIsGood;
+    } jellyIsGood;
 
     jellyIsGood.jellysCorp = "Candy";
     jellyIsGood.tasteOfJellys = "Yummy";
-    jellyIsGood.numberOfJellysInPackage = 200/2.5;
+    jellyIsGood.numberOfJellysInPackage = 200 / 2.5;
     jellyIsGood.priceOfJellys = 2.99;
 
-    cout << "Good jellys are from " << jellyIsGood.jellysCorp << " and their taste must be " << jellyIsGood.tasteOfJellys << ". Their cost is only " << jellyIsGood.priceOfJellys << " and there are " << jellyIsGood.numberOfJellysInPackage << " jellys in one package." <<endl;
+    cout << "Good jellys are from " << jellyIsGood.jellysCorp << " and their taste must be " << jellyIsGood.tasteOfJellys << ". Their cost is only " << jellyIsGood.priceOfJellys << " and there are " << jellyIsGood.numberOfJellysInPackage << " jellys in one package." << endl;
 
     /*
     Za pomocą znaku "&" referujemy zmienną do istniejącej zmiennej
@@ -460,7 +477,7 @@ int main(){
         return 0;
     }
 
-    w funckcjach z parametrem określamy typ naszego parametru 
+    w funckcjach z parametrem określamy typ naszego parametru
     void myFunction(string firstName, string secondName) {
         cout << firstName << " " << secondName << endl;
     }
@@ -499,16 +516,16 @@ int main(){
 
     string yourName2;
     int yourAge2;
-    
-    cout << "Wprowadź swoje imię: "<< endl;
+
+    cout << "Wprowadź swoje imię: " << endl;
     cin >> yourName2;
-    cout << "Your age: "<< endl;
+    cout << "Your age: " << endl;
     cin >> yourAge2;
 
     aboutYou(yourName2, yourAge2);
 
     /*
-    Jeżeli chcemy przypisać Array do funckji, wtedy nasza 
+    Jeżeli chcemy przypisać Array do funckji, wtedy nasza
     funkcja oraz int main() będą wyglądały w ten sposób:
 
     void myNumberFunction(int myNumbers[5]){
@@ -528,7 +545,7 @@ int main(){
     ===================== Nadmiar Funckji =====================
     ===========================================================
 
-    Podczas nadmiaru funkcji, kilka funckji może mieć tą samą 
+    Podczas nadmiaru funkcji, kilka funckji może mieć tą samą
     nazwę z innymi parametrami
 
     - int myFuntion(int x)
@@ -558,7 +575,7 @@ int main(){
     ============================================================
 
     Rekursja funkcji to technika tworzenia funckji, która wywołuje się sama.
-    Za pomocą tej metody jesteśmy w stanie poradzić sobie z skomplikowanymi 
+    Za pomocą tej metody jesteśmy w stanie poradzić sobie z skomplikowanymi
     problemami.
 
     int sum(int x) {
@@ -580,16 +597,16 @@ int main(){
     ===================================================
 
     OOP jest skótem od ,,Object-Oriented Programming", czyli programowanie skupiona
-    na obiektach. Proceduralne programowanie opiera się na pisaniu procedur lub 
-    funkcji, opierających się na danych, podczas gdy programowanie obiektowe (skupione 
-    na programowaniu) opierane jest na tworzeniu obiektów, które przechowują dane i 
+    na obiektach. Proceduralne programowanie opiera się na pisaniu procedur lub
+    funkcji, opierających się na danych, podczas gdy programowanie obiektowe (skupione
+    na programowaniu) opierane jest na tworzeniu obiektów, które przechowują dane i
     funckje.
 
     Programowanie skupione na obiektach jest lepsze od proceduralnego ze względu na:
     - OOP jest szyszbe i łatwiejsze do urochomienia
     - OOP posiada czystą strukturę dla programów
-    - OOP pomaga zachować kod C++ SUCHYM z angielskiego "DRY code", co oznacza "Don't repeat yourself code". 
-    - OOP pozwala na tworzenie pełnych używalnych aplkacji, w krótszym czasie, bez potrzeby pisania więcej kodu 
+    - OOP pomaga zachować kod C++ SUCHYM z angielskiego "DRY code", co oznacza "Don't repeat yourself code".
+    - OOP pozwala na tworzenie pełnych używalnych aplkacji, w krótszym czasie, bez potrzeby pisania więcej kodu
 
     Co to są obiekty i klasy ?
 
@@ -597,8 +614,8 @@ int main(){
     mogłoby być Volvo, a Słodycze, żelkami.
 
     Wszystko w C++ ma związek z klasami, atrybutami, obiektami i metodami. Dla przykładu obiektem jest auto,
-    auto posiada atrybut taki, jak waga lub kolor oraz metoday, takie jak jedź i przerwa. Atrybuty i metoda to 
-    z zasady zazwyczaj zmienna i funkcje, które należą do klas. 
+    auto posiada atrybut taki, jak waga lub kolor oraz metoday, takie jak jedź i przerwa. Atrybuty i metoda to
+    z zasady zazwyczaj zmienna i funkcje, które należą do klas.
 
     ~ Klasa wygląda w ten sposób:
 
@@ -612,13 +629,13 @@ int main(){
         MyClass myObject;  // Obiekt klasy "MyClass"
 
         // Określanie wartości dla atrybutów
-        myObj.myNum = 15; 
+        myObj.myNum = 15;
         myObj.myString = "Some text";
 
         // Pokaż wartości atrbutów
         cout << myObj.myNum << "\n";
         cout << myObj.myString;
-        
+
         return 0;
     }
 
@@ -632,10 +649,10 @@ int main(){
     }
 
     Po co dodajemy "public" ?
-    ~ public to słowo kluczowe, które służy jako Specyfikator dostępu, natomiast owy specyfikator określa 
+    ~ public to słowo kluczowe, które służy jako Specyfikator dostępu, natomiast owy specyfikator określa
     jak członkowie, czyli atrybuty i metody klas mogą dostać dostęp. Członkowie są słowem kluczowym public,
-    co znaczy, że można się do nich dostać i je zmodyfikować z zewnątrz. 
-    ~ zamiast public, możemy też użyć słowa kluczowe "private" (członkowie nie mogą zostać wyświetleni z zewnątrz) lub "protected" 
+    co znaczy, że można się do nich dostać i je zmodyfikować z zewnątrz.
+    ~ zamiast public, możemy też użyć słowa kluczowe "private" (członkowie nie mogą zostać wyświetleni z zewnątrz) lub "protected"
     (członkowie nie mogą zostać wyświetleni z zewnątrz, natomiast mogą być wyświetlone w klasach dziedziczonych).
 
     Przykłady użyć innych słów kluczowych:
@@ -650,12 +667,12 @@ int main(){
     }
 
     int main(){
-        MyClass myObject; 
+        MyClass myObject;
         myObject.x = 15; // Posiada zezwolenie (publiczny)
         myObject.y = 25; // Nie posiada zezwolenia (prywatny)
     }
 
-    Jako wynik debugowania kodu, wyjdzie ci error, ponieważ zmienna y jest prywatna, tak samo w 
+    Jako wynik debugowania kodu, wyjdzie ci error, ponieważ zmienna y jest prywatna, tak samo w
     przypadku słowa kluczowego "protected"
 
     ===================================================
@@ -664,16 +681,16 @@ int main(){
 
     Encapsulation (na polski, Hemertyzacja) jest po to by się upewnić, że nasze "wrażliwe"
     dane są ukryte przed użytkownikiem. Żeby to osiągnąć używamy wcześniej omówionego słowa
-    kluczowego "private". Jeżeli chcesz zmienić lub odczytać chronione wartości możesz użyć 
+    kluczowego "private". Jeżeli chcesz zmienić lub odczytać chronione wartości możesz użyć
     metody get lub set.
-    Przykład poniżej ogranicza dostęp atrybutowi salary, metoda set pod słowem kluczowym 
+    Przykład poniżej ogranicza dostęp atrybutowi salary, metoda set pod słowem kluczowym
     "public" ustawia wartość salary, a następnie metoda get pobiera jego wartość.
 
     class Employee {
         private:
             int salary;
 
-        public: 
+        public:
             // "setter" - metoda set
             void setSalary(int s) {
                 salary = s;
@@ -695,43 +712,42 @@ int main(){
 
     */
 
-   Jellys jelly1;
-   jelly1.nazwa_firmy = "Haribo";
-   jelly1.smak = "drogi";
-   jelly1.ilosc_gram = 100;
+    Jellys jelly1;
+    jelly1.nazwa_firmy = "Haribo";
+    jelly1.smak = "drogi";
+    jelly1.ilosc_gram = 100;
 
-   Jellys jelly2;
-   jelly2.nazwa_firmy = "Candy";
-   jelly2.smak = "tani";
-   jelly2.ilosc_gram = 200;
+    Jellys jelly2;
+    jelly2.nazwa_firmy = "Candy";
+    jelly2.smak = "tani";
+    jelly2.ilosc_gram = 200;
 
-   Jellys jelly3;
-   jelly3.nazwa_firmy = "Kino";
-   jelly3.smak = "mega tani";
-   jelly3.ilosc_gram = 200;
+    Jellys jelly3;
+    jelly3.nazwa_firmy = "Kino";
+    jelly3.smak = "mega tani";
+    jelly3.ilosc_gram = 200;
 
+    cout << "Żelki nr.1 to żelki firmy " << jelly1.nazwa_firmy << ", a ich smak jest " << jelly1.smak << ". Paczka zawiera " << jelly1.ilosc_gram << " gram żelków." << endl;
+    cout << "Żelki nr.2 to żelki firmy " << jelly2.nazwa_firmy << ", a ich smak jest " << jelly2.smak << ". Paczka zawiera " << jelly2.ilosc_gram << " gram żelków." << endl;
+    cout << "Żelki nr.3 to żelki firmy " << jelly3.nazwa_firmy << ", a ich smak jest " << jelly3.smak << ". Paczka zawiera " << jelly3.ilosc_gram << " gram żelków." << endl;
 
-   cout << "Żelki nr.1 to żelki firmy " << jelly1.nazwa_firmy << ", a ich smak jest " << jelly1.smak << ". Paczka zawiera " << jelly1.ilosc_gram << " gram żelków." <<endl;
-   cout << "Żelki nr.2 to żelki firmy " << jelly2.nazwa_firmy << ", a ich smak jest " << jelly2.smak << ". Paczka zawiera " << jelly2.ilosc_gram << " gram żelków." <<endl;
-   cout << "Żelki nr.3 to żelki firmy " << jelly3.nazwa_firmy << ", a ich smak jest " << jelly3.smak << ". Paczka zawiera " << jelly3.ilosc_gram << " gram żelków." <<endl;
+    /*
+    Możemy tworzyć funkcję w klasach:
 
-   /*
-   Możemy tworzyć funkcję w klasach:
+     class functionClass {
+     public:
+         void myFunctionClass() {
+             cout << "Jak tam ci leci nauka ?";
+         }
+     };
 
-    class functionClass {
-    public:
-        void myFunctionClass() {
-            cout << "Jak tam ci leci nauka ?";
-        }
-    };
-
-   */
+    */
 
     functionClass myObjectOfFunCls;
     myObjectOfFunCls.myFunctionClass();
 
     /*
-    To był przykład użycia funkcji działającej w klasie, natomiast możemy też 
+    To był przykład użycia funkcji działającej w klasie, natomiast możemy też
     użyć funkcji zewnętrznie.
 
         class functionClass {
@@ -758,7 +774,7 @@ int main(){
     }
 
     int main() {
-        Car myCar; 
+        Car myCar;
         cout << myCar.speed(418); // Jedna z moich ulubionych liczb, możesz sprawdzić dlaczego ;)
         return 0;
     }
@@ -790,17 +806,17 @@ int main(){
         cout << dominik.laptop << " " << dominik.lastName << " " << dominik.years << endl;
 
         return 0;
-    }   
+    }
 
     ====================================================================
     =================== Inheritance (dziedziczenie) ====================
     ====================================================================
 
-    W c++ jest możliwe dziedziczenie atrybutów i metod od jednej klasy 
+    W c++ jest możliwe dziedziczenie atrybutów i metod od jednej klasy
     do kolejnej. Kocepcje dziedziczenia w c++ dzielimy na dwie katergorie:
         - derived class, child (dziecko) - klasa, która dziedziczy atrbuty
           od innej klasy
-        - base class, parent (rodzic) - klasa, od której atrybuty są 
+        - base class, parent (rodzic) - klasa, od której atrybuty są
         dziedziczone
 
     // "Base class"
@@ -827,7 +843,7 @@ int main(){
         return 0;
     }
 
-    Również jest możliwe dziedzczenie jednej z klasy z innej 
+    Również jest możliwe dziedzczenie jednej z klasy z innej
     dziedziczonej klasy
 
     // "Base class"
@@ -850,7 +866,7 @@ int main(){
         return 0;
     }
 
-    Klasa może być dziedziczona więcej niż z tylko jednej klasy pełniącej 
+    Klasa może być dziedziczona więcej niż z tylko jednej klasy pełniącej
     rolę rodzica - base class.
 
     // "Base class"
@@ -888,7 +904,7 @@ int main(){
 
     // Kolejny: "Base class"
     class Person {
-        public: 
+        public:
             string fName;
             string lName;
     };
@@ -911,7 +927,7 @@ int main(){
         Dominik.getSalary();
 
         cout << Dominik.fName << " " << Dominik.lName << " " << Dominik.salary <<endl;
-        
+
         return 0;
     }
 
@@ -919,7 +935,7 @@ int main(){
     ==== Polymorphism - ,,Many forms" (Polimorfizm - ,,Wiele form") =====
     =====================================================================
 
-    Polimorfizm, tzw. Wiele form zdarza się, kiedy mamy wiele klas, które są ze sobą 
+    Polimorfizm, tzw. Wiele form zdarza się, kiedy mamy wiele klas, które są ze sobą
     powiązane poprzez dziedziczenie.
 
     // "Base class"
@@ -936,7 +952,7 @@ int main(){
             void myFunction() {
                 cout << "Technicy lubią się bawić w Arduino" <<endl;
             }
-    }; 
+    };
 
     // "Derived class 2"
     class derivedClassSecond : public BaseClass{
@@ -962,7 +978,7 @@ int main(){
     ==== Praca z plikami w C++ - kontyunacja ====
     =============================================
 
-    - Pracę z plikami w c++ zaczynamy od importowania biblioteki 
+    - Pracę z plikami w c++ zaczynamy od importowania biblioteki
     <fsream>, więcej o tym znajdziesz na samej górze pliku, linijka
     czwarta.
 
@@ -972,48 +988,70 @@ int main(){
     ofstream MyFile("kocham_zelki.txt");
 
     // pisze do pliku
-    MyFile << "My kochamy żelki, Jeśli je zjesz będziesz wielki! Zjedz a poczujesz ulgę w gębie x2 Oooł  jeeee... - https://jaramy-si.blogspot.com/2012/04/oto-piosenka-o-zelkach.html" <<endl;
-
-    // przeczytaj plik
-    ifstream MyFile("kocham_zelki.txt");
+    MyFile << "My kochamy żelki, Jeśli je zjesz będziesz wielki! Zjedz a poczujesz ulgę w gębie x2 Oooł  jeeee... - https://jaramy-si.blogspot.com/2012/04/oto-piosenka-o-zelkach.html" << endl;
 
     // zamyka plik
     MyFile.close();
-    
-/*
 
-    C++ Exceptions
+    // przeczytaj plik
+    //ifstream MyFile("kocham_zelki.txt");
 
-*/
-
-    // Donut na motywację ;) - https://github.com/adhikary97/Donut
     /*
-    
-                                                                                       
-                   @@@@@@@                                 
-             $$$$######$$$$$$$$$                           
-           ###***!******#####$$$$$$                        
-         ****!!!=!!=!!!!!!!***###$$$#                      
-       *!!!!!==;;;;;;;===!!!****######*                    
-      !!!!=;;::~~---~~:::;==!!!****####*                   
-     !!!=;;:~--,.....,,-~::;==!!*********                  
-    ====;;:~-,..........,-~~;;==!!*******=                 
-    ====;:~~,,...... .....-~::;==!!*!****!                 
-    ====;;:~-,...       ..,-~:;;=!!!!!!!!!                 
-    ;====;;:~-,.         ..-~:;;==!!!!!!!=                 
-    ;==!!====!==-        ,,-~:;;===!!!!!==                 
-    :==!!**#####*=      ~::;;;;==========;                 
-     ;=!**###$$$$$$#*!!==;;;=;==========;:                 
-     ~;=!**#$$$@@@$$##**!!!===========;;:                  
-      -;=!!*##$$$$$$##***!!!=======;;;:~                   
-       ,:=!*!**#####****!!!=====;;;;::~                    
-         -:;=!=!!!!!!!!!!!====;;;::~~,                     
-           ,~:;===!!!!=====;;:::~~-,                       
-              ,-~::;;;::::~:~~-,.                          
-                  ...,,,.....                              
+
+        ===========================================
+        ====== C++ Exceptions (Wyjątki C++) =======
+        ===========================================
+
+        - C++ może zgłosić wyjątek podczas błędu kodu.
+        Rozwiązaniem na poradzenie sobie z wyjątkiem jest próba
+        i łapanka, tzw. "Try and Catch". Polega to na takich
+        słowach kluczowych, jak "try", "throw", "catch".
+            = try - stan pozwalający na zdefiniowanie bloku kodu, który 
+                sprawdza czy występują jakieś błędy
+            = throw - słowo kluczowe, która odpowiada za wyrzucanie wyjątku,
+                kiedy pojawia się problem, pozwala nam na tworzenie własnego błędu.
+            = catch - stan pozwalający na zdefiniowanie bloku kodu by został on 
+                wykonany, jeśli pojawi się jakiś błąd
+
+        Dla przykładu:
+        try {
+          // Blok kodu, który ma "spróbować"
+          throw exception; // Wyrzuca wyjątek podczas pojawienie się problemu
+        }
+        catch () {
+          // Blok kodu służący do radzenia sobie z problemami
+        }
+        
 
     */
 
+    // Donut na motywację ;) - https://github.com/adhikary97/Donut
+    /*
+
+
+                       @@@@@@@
+                 $$$$######$$$$$$$$$
+               ###***!******#####$$$$$$
+             ****!!!=!!=!!!!!!!***###$$$#
+           *!!!!!==;;;;;;;===!!!****######*
+          !!!!=;;::~~---~~:::;==!!!****####*
+         !!!=;;:~--,.....,,-~::;==!!*********
+        ====;;:~-,..........,-~~;;==!!*******=
+        ====;:~~,,...... .....-~::;==!!*!****!
+        ====;;:~-,...       ..,-~:;;=!!!!!!!!!
+        ;====;;:~-,.         ..-~:;;==!!!!!!!=
+        ;==!!====!==-        ,,-~:;;===!!!!!==
+        :==!!**#####*=      ~::;;;;==========;
+         ;=!**###$$$$$$#*!!==;;;=;==========;:
+         ~;=!**#$$$@@@$$##**!!!===========;;:
+          -;=!!*##$$$$$$##***!!!=======;;;:~
+           ,:=!*!**#####****!!!=====;;;;::~
+             -:;=!=!!!!!!!!!!!====;;;::~~,
+               ,~:;===!!!!=====;;:::~~-,
+                  ,-~::;;;::::~:~~-,.
+                      ...,,,.....
+
+    */
 
     // kończy naszą funkcję
     return 0;
